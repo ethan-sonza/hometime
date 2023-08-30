@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      - DB_NAME=hometime
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASS=postgres
+    ports:
+      - 3000:3000
+  postgres:
+    image: postgres:alpine3.15
+    environment:
+      - POSTGRES_DB=hometime
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
