@@ -29,6 +29,7 @@ docker compose up -d
 
 ## Postman settings
 - In the Headers, set `'Accept' => 'application/json'` to show json error payloads
+- Valid POST payloads are the ones provided in the PDF document
 
 
 ## Testing
