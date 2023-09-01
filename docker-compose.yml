@@ -11,9 +11,17 @@ services:
       - DB_PASS=postgres
     ports:
       - 3000:3000
+    volumes:
+      - .:/app
+    command: ["rails", "server", "-b", "0.0.0.0"]
   postgres:
     image: postgres:alpine3.15
     environment:
       - POSTGRES_DB=hometime
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

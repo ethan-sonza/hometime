@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An approach on how to parse and save 2 different payloads with 1 API endpoint
 
-Things you may want to cover:
+## API Endpoints
+| HTTP Method | Endpoint               | Description                            |
+|-------------|------------------------|----------------------------------------|
+| GET         | /reservations          | Get a list of Reservations             |
+| POST        | /reservations          | Create a new Reservation               |
+| GET         | /reservations/:id      | Get details of a specific Reservation  |
 
-* Ruby version
+## Prerequisites
+- Ruby (3.2.2)
+- Ruby on Rails (7.0.7)
+- PostgreSQL
 
-* System dependencies
+## Setup
+```
+rails db:create
+rails db:migrate
+rails start
+```
 
-* Configuration
+## Docker
+```
+docker compose build
+docker compose up -d
+```
 
-* Database creation
+## Postman settings
+- In the Headers, set `'Accept' => 'application/json'` to show json error payloads
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Testing
+```
+rails test
+```
